@@ -65,6 +65,12 @@ chrome.runtime.onMessage.addListener(
                 "from the extension");
     //if (request.greeting == "hello"){
       sendResponse({farewell: "goodbye"});
+      if(request.greeting === "print")
+      {
+        console.log("Now printing");
+        printer();
+        return;
+      }
       console.log(request.greeting);
       flag = true;
       comText = request.greeting;
@@ -84,6 +90,10 @@ function createTitle()
   return commentTitle;
 }
 
+function printer()
+{
+    window.print();
+}
 
 function getFullDate()
 {
