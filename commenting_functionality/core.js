@@ -85,6 +85,25 @@ function createTitle()
 }
 
 
+function getFullDate()
+{
+  var date = new Date();
+  var d = date.getDate();
+  var m = date.getMonth();
+  var y = date.getFullYear();
+  var h = date.getHours();
+  var min = date.getMinutes();
+  var noon = "AM";
+  if(h > 12)
+  {
+    h = h-12;
+    noon = "PM";
+  } 
+  var timeString = "("+m+"/"+d+"/"+y+" "+h+":"+min+noon+")";
+  //console.log("Timestring is "+timeString);
+  return timeString;
+}
+
 function commentText(commentText)
 {
     var temp = window.getSelection();
@@ -100,8 +119,9 @@ function commentText(commentText)
     
     replaceText(selected,temp,range);
     var mydiv = document.createElement('div'); 
+    var ts = getFullDate();
     //this sets the text for the comments.
-    mydiv.innerText=commentNum+". "+commentText;
+    mydiv.innerText=commentNum+". "+ts+" "+commentText;
     mydiv.style.fontSize="15px";
     selectionNode = window.getSelection().extentNode.parentNode;
     /*if(commentNum===1)
