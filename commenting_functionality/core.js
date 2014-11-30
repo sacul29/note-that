@@ -58,6 +58,10 @@ function replaceText(selectedText,selectedNode,range)
 }
 
 
+
+
+
+//Used to send function calls from the extension
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     console.log(sender.tab ?
@@ -69,6 +73,14 @@ chrome.runtime.onMessage.addListener(
       {
         console.log("Now printing");
         printer();
+        sendResponse({farewell: "goodbye"});
+        return;
+      }
+      else if(request.greeting === "down")
+      {
+        //console.log(request);
+        
+        sendResponse({farewell: "goodbye"});
         return;
       }
       console.log(request.greeting);
@@ -172,3 +184,7 @@ function renderBubble(mouseX, mouseY, selection) {
   bubbleDOM.style.left = mouseX + 'px';
   bubbleDOM.style.visibility = 'visible';
 }
+
+
+
+

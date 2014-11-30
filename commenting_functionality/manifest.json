@@ -4,7 +4,7 @@
   "author":"Lucas F. Chaufournier",
   "version": "1.0",
   "permissions": [
-    "tabs", "http://*/*", "https://*/*","activeTab"
+    "tabs", "http://*/*", "https://*/*","activeTab","desktopCapture"
   ],
  "content_scripts": [
     {
