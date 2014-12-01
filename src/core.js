@@ -348,6 +348,9 @@ function restoreData(url)
       return;
     }
     document.documentElement.innerHTML = data[url].webpage;
+
+    alert("Comments Restored");
+
   });
 }
 
@@ -373,7 +376,7 @@ function savePage(tabUrl)
   var obj = {};
   obj[tabUrl] = pageData;
   chrome.storage.local.set(obj);
-
+  alert("Comments saved");
   return pageData;
 }
 
