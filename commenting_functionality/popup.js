@@ -28,14 +28,6 @@ function click(e) {
 }
 
 
-chrome.extension.onMessage.addListener(
-  function(message,sender,sendResponse){
-    if(message.type == 'getTabId')
-    {
-      console.log("Tab id is "+sender.tab.id);
-      sendResponse({tabId:sender.tab.id});
-    }
-  });
 
 
 
