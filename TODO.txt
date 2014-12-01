@@ -1,5 +1,0 @@
-TODO:
-
-Implement Saving
-Implement Reloading
-Implement Highlight--Just Highlighting, no commenting
